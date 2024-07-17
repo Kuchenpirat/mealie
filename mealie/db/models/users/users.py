@@ -65,6 +65,11 @@ class User(SqlAlchemyBase, BaseMixins):
     can_invite: Mapped[bool | None] = mapped_column(Boolean, default=False)
     can_organize: Mapped[bool | None] = mapped_column(Boolean, default=False)
 
+    # Features
+    feat_meal_planner: Mapped[bool | None] = mapped_column(Boolean, default=True)
+    feat_shopping_list: Mapped[bool | None] = mapped_column(Boolean, default=True)
+    feat_timeline: Mapped[bool | None] = mapped_column(Boolean, default=True)
+
     sp_args = {
         "back_populates": "user",
         "cascade": "all, delete, delete-orphan",
